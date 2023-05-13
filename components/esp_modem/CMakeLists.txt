@@ -36,6 +36,13 @@ idf_component_register(SRCS "${srcs}"
                     REQUIRES ${dependencies})
 
 
+target_compile_definitions(
+    ${COMPONENT_LIB}
+    PUBLIC
+    "-DESP_MODEM_C_API_STR_MAX=128"
+)
+
+
 set_target_properties(${COMPONENT_LIB} PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
